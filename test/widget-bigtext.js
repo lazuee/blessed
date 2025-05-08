@@ -25,7 +25,7 @@ var box = blessed.bigtext({
   }
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

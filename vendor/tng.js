@@ -29,7 +29,7 @@ function PNG(file, options) {
   if (!file) throw new Error('no file');
 
   this.options = options || {};
-  this.colors = options.colors || require('blessed/lib/colors');
+  this.colors = options.colors || require('../lib/colors');
   this.optimization = this.options.optimization || 'mem';
   this.speed = this.options.speed || 1;
 
@@ -507,7 +507,7 @@ PNG.prototype.sampleInterlacedLines = function(raw) {
   // Make a result array, and make it big enough. Interleaving
   // writes to the output array randomly (well, not quite), so the
   // entire output array must be in memory.
-  samples = new Buffer(vpr * this.height);
+  samples = Buffer.alloc(vpr * this.height);
   samples.fill(0);
 
   source_offset = 0;
@@ -1209,9 +1209,8 @@ PNG.prototype.gifMagick = function(input) {
 };
 
 PNG.prototype.decompress = function(buffers) {
-  return zlib.inflateSync(new Buffer(buffers.reduce(function(out, data) {
-    return out.concat(Array.prototype.slice.call(data));
-  }, [])));
+  const flat = Buffer.concat(buffers.map(b => Buffer.from(b)));
+  return zlib.inflateSync(flat);
 };
 
 /**
@@ -1488,7 +1487,7 @@ function GIF(file, options) {
             ext.data.push(buf.slice(p, p + size));
             p += size;
           }
-          ext.data = new Buffer(ext.data.reduce(function(out, data) {
+          ext.data = Buffer.from(ext.data.reduce(function(out, data) {
             return out.concat(Array.prototype.slice.call(data));
           }, []));
           // AnimExts looping extension (identical to netscape)
@@ -1556,10 +1555,7 @@ function GIF(file, options) {
 
   this.images = this.images.map(function(img, imageIndex) {
     var control = img.control || this;
-
-    img.lzw = new Buffer(img.lzw.reduce(function(out, data) {
-      return out.concat(Array.prototype.slice.call(data));
-    }, []));
+    img.lzw = Buffer.concat(img.lzw.map(data => Buffer.from(data)));
 
     try {
       img.data = this.decompress(img.lzw, img.codeSize);

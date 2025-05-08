@@ -1,0 +1,3 @@
+tasks:
+  - before: |
+      curl -fsSL https://bun.sh/install | bash && source /home/gitpod/.bashrc && bun --version && npm i -g npm@latest pnpm@latest && clear

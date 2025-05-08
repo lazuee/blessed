@@ -21,7 +21,7 @@ blessed.box({
   padding: 2
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

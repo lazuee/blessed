@@ -41,7 +41,7 @@ setInterval(function() {
   screen.render();
 }, 1000).unref();
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

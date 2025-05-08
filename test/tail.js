@@ -4,7 +4,7 @@ module.exports = function(file) {
     , fs = require('fs')
     , StringDecoder = require('string_decoder').StringDecoder
     , decode = new StringDecoder('utf8')
-    , buffer = new Buffer(64 * 1024)
+    , buffer = Buffer.alloc(64 * 1024)
     , Stream = require('stream').Stream
     , s = new Stream
     , buff = ''
@@ -17,7 +17,7 @@ module.exports = function(file) {
     s.emit('close');
   };
 
-  fs.open(file, 'a+', 0644, function(err, fd) {
+  fs.open(file, 'a+', 0o644, function(err, fd) {
     if (err) {
       s.emit('error', err);
       s.destroy();

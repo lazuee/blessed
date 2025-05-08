@@ -110,7 +110,7 @@ var over = blessed.box({
   draggable: true,
   border: {
     type: 'line',
-    left: false,
+    left: true,
     top: true,
     right: true,
     bottom: true
@@ -118,7 +118,7 @@ var over = blessed.box({
   content: 'Drag Me'
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

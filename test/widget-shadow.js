@@ -44,7 +44,7 @@ var over = blessed.box({
   height: '50%',
   style: {
     bg: 'red',
-    transparent: true
+    opacity: 0.9
   },
   border: 'line',
   draggable: true,
@@ -74,7 +74,7 @@ over.key('down', function() {
 
 over.focus();
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

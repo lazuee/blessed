@@ -46,7 +46,7 @@ fm.refresh();
 
 screen.render();
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   screen.destroy();
 });
 

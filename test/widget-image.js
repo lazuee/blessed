@@ -63,7 +63,7 @@ screen.key('i', function() {
   screen.displayImage(file);
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

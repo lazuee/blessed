@@ -26,7 +26,7 @@ var box2 = blessed.box({
   border: 'line'
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

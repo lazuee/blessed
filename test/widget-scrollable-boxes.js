@@ -4,7 +4,6 @@ var blessed = require('../')
 screen = blessed.screen({
   dump: __dirname + '/logs/scrollable-boxes.log',
   smartCSR: true,
-  warnings: true
 });
 
 var box = blessed.box({
@@ -20,6 +19,7 @@ var box = blessed.box({
   },
   border: 'line',
   content: 'foobar',
+  mouse:true,
   keys: true,
   vi: true,
   alwaysScroll: true,
@@ -119,7 +119,7 @@ var box3 = blessed.box({
   // }
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

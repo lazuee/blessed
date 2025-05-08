@@ -16,8 +16,8 @@ var list = blessed.list({
   vi: true,
   width: '50%',
   height: 'shrink',
-  //border: 'line',
-  top: 5,
+  border: 'line',
+  // top: 5,
   //bottom: 2,
   left: 0,
   style: {

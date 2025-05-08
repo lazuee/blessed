@@ -32,6 +32,6 @@ setTimeout(function() {
   screen.render();
 }, 2000);
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   screen.destroy();
 });

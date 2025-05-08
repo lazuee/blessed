@@ -1,4 +1,4 @@
-var blessed = require('blessed');
+var blessed = require('../');
 var screen = blessed.screen({
   autoPadding: true,
   warnings: true
@@ -36,7 +36,7 @@ tab._.data = blessed.text({
 
 tab._.data.setContent(require('util').inspect(process, null, 6));
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   screen.destroy();
 });
 

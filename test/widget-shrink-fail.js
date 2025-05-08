@@ -1,4 +1,4 @@
-var blessed = require('blessed');
+var blessed = require('../');
 var screen = blessed.screen({
   autoPadding: true,
   warnings: true
@@ -154,7 +154,7 @@ form.on('submit', function(data) {
   screen.destroy();
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   screen.destroy();
 });
 

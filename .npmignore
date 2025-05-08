@@ -1,6 +1,6 @@
 .git*
 test/
 img/
+example/
 node_modules/
-.jshintrc
-.jscsrc
+pnpm-lock.yaml

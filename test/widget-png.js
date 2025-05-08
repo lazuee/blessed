@@ -57,7 +57,7 @@ var spinfox = __dirname + '/spinfox.png';
 
 // XXX I'm not sure of the license of this file,
 // so I'm not going to redistribute it in the repo.
-var url = 'https://people.mozilla.org/~dolske/apng/spinfox.png';
+var url = 'https://web.archive.org/web/20160504130225if_/http://people.mozilla.org/~dolske/apng/spinfox.png';
 
 if (!file) {
   try {
@@ -93,7 +93,7 @@ var png = blessed.image({
 
 screen.render();
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   clearInterval(timeout);
   screen.destroy();
 });

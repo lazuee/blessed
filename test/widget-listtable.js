@@ -82,7 +82,7 @@ var data2 = [
 data2[1][0] = '{red-fg}' + data2[1][0] + '{/red-fg}';
 data2[2][0] += ' (' + DU + JUAN + ')';
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   return screen.destroy();
 });
 

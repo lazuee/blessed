@@ -76,7 +76,7 @@ prompt.input('Question?', '', function(err, value) {
   });
 });
 
-screen.key('q', function() {
+screen.key(['escape', 'q', 'C-c'], function() {
   screen.destroy();
 });
 
