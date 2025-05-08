@@ -19,7 +19,7 @@
   "homepage": "https://github.com/lazuee/blessed",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lazuee/react-router.git"
+    "url": "git+https://github.com/lazuee/blessed.git"
   },
   "bugs": {
     "url": "http://github.com/lazuee/blessed/issues"
