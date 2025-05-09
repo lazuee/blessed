@@ -28,9 +28,9 @@
     "access": "public"
   },
   "dependencies": {
+    "@lydell/node-pty": "^1.1.0",
     "@se-oss/deasync": "^1.0.1",
     "cli-spinners": "^3.2.0",
-    "node-pty": "1.1.0-beta34",
     "term.js": "^0.0.7"
   },
   "devDependencies": {
@@ -38,10 +38,5 @@
     "@types/bun": "^1.2.12",
     "@types/node": "^22.15.17",
     "typescript": "^5.8.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "node-pty"
-    ]
   }
 }
