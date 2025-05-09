@@ -30,7 +30,7 @@
   "dependencies": {
     "@se-oss/deasync": "^1.0.1",
     "cli-spinners": "^3.2.0",
-    "node-pty": "^1.1.0-beta34",
+    "node-pty": "1.1.0-beta34",
     "term.js": "^0.0.7"
   },
   "devDependencies": {
